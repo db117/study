@@ -46,4 +46,41 @@
             *   s0
             *   s1
         *   Tenured(老年代)
+####指令重排
+
+####Volatile
+*   可见性
+
+####Trace跟踪参数
+*   -verbose:gc
+        打印GC日志信息
+*   -XX:+PrintGCDetails
+        打印GC日志信息
+*   -Xloggc:d:/gc.log 
+        GC日志目录
+*   -XX:+PrintHeapAtGC 
+        每次一次GC后，都打印堆信息
+*   -XX:+TraceClassLoading
+        类加载信息
+####Heap内存分配参数
+*   -Xmx 
+        最大堆
+*   –Xms
+        最小堆
+*   -Xmn 
+        新生代大小 （eden+2s)
+*   –XX:NewRatio 
+        年轻代（eden+2s）：老年代
+*   –XX:SurvivorRatio  2s:eden 
+####Stack内存分配参数
+*   -Xss
+    *   决定方法调用的深度
+    *   没个线程独有栈空间
+    *   参数，局部变量分配在栈上
+    *   一般几百K就够了，64位jvm默认1M
+####JVM内存回收
+*   标记-清除算法
+*   复制算法
+*   标记-整理算法
+*   分代收集算法
 
