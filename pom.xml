@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.study</groupId>
+    <artifactId>study</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>jvm</module>
+    </modules>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.2.RELEASE</version>
+    </parent>
+
+    <properties>
+        <!--环境-->
+        <jdk.version>1.8</jdk.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <downloadSources>true</downloadSources>
+
+        <!--jar版本-->
+        <spring-boot-starter-dubbo>1.0.0</spring-boot-starter-dubbo>
+        <hutool-all.version>4.0.9</hutool-all.version>
+        <mybatis-plus.version>2.2.0</mybatis-plus.version>
+        <druid-spring.version>1.1.9</druid-spring.version>
+        <easyPoi.version>3.1.0</easyPoi.version>
+        <velocity.version>2.0</velocity.version>
+        <fastjson.version>1.2.47</fastjson.version>
+    </properties>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <!--dubbo的springboot快速启动器-->
+                <groupId>io.dubbo.springboot</groupId>
+                <artifactId>spring-boot-starter-dubbo</artifactId>
+                <version>${spring-boot-starter-dubbo}</version>
+            </dependency>
+
+            <dependency>
+                <!--Hutool是一个Java工具包-->
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool-all.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <!--Mybatis-Plus（简称MP）是一个 Mybatis 的增强工具，http://mp.baomidou.com-->
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <artifactId>tomcat-jdbc</artifactId>
+                        <groupId>org.apache.tomcat</groupId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <!-- 模板引擎 生成代码用-->
+                <groupId>org.apache.velocity</groupId>
+                <artifactId>velocity-engine-core</artifactId>
+                <version>${velocity.version}</version>
+            </dependency>
+
+            <!--EasyPoi Excel和 Word简易工具类 http://www.afterturn.cn/-->
+            <dependency>
+                <groupId>cn.afterturn</groupId>
+                <artifactId>easypoi-base</artifactId>
+                <version>${easyPoi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.afterturn</groupId>
+                <artifactId>easypoi-web</artifactId>
+                <version>${easyPoi.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.afterturn</groupId>
+                <artifactId>easypoi-annotation</artifactId>
+                <version>${easyPoi.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <!--阿里的数据库连接池-->
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid-spring.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <!--阿里的json库-->
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>
