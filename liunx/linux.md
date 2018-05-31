@@ -86,6 +86,9 @@
         *   systemctl enable iptables.service #设置防火墙开机启动
     *   最后重启系统使设置生效即可。
 
+####安装rz和sz命令
+yum install lrzsz  
+
 #本地yum包制作
 
 ####收集rpm安装包

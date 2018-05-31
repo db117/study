@@ -33,3 +33,9 @@
     *   修改此vim /usr/share/zabbix/include/defines.inc.php文件中字体的配置，
         将里面关于字体设置从graphfont替换成simkai
         *   define('ZBX_GRAPH_FONT_NAME',           'simkai'); // font file name
+
+####关闭selinux
+*   vim /etc/selinux/config
+    *   SELINUX=disabled
+*   setenforce 0
+*   getenforce
