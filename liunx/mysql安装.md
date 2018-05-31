@@ -14,7 +14,7 @@
     *   systemctl enable mysqld
     *   systemctl daemon-reload
 *   修改密码策略
-    *   在/etc/my.cnf文件添加validate_password_policy配置，指定密码策略
+    *   在vim /etc/my.cnf文件添加validate_password_policy配置，指定密码策略
     *   选择0（LOW），1（MEDIUM），2（STRONG）其中一种，选择2需要提供密码字典文件
         *    validate_password_policy=0
     *   如果不需要密码策略，添加my.cnf文件中添加如下配置禁用即可：

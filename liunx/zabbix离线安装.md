@@ -12,10 +12,10 @@
 *   导入初始模式和数据。将提示您输入新创建的密码。
     *   zcat /usr/share/doc/zabbix-server-mysql*/create.sql.gz | mysql -uzabbix -p zabbix
 *   为ZabBIX服务器配置数据库
-    *   编辑文件 /etc/zabbix/zabbix_server.conf
+    *   编辑文件    vim /etc/zabbix/zabbix_server.conf
         *   DBPassword=password
 *   为ZabBIX前端配置PHP
-    *   编辑文件 /etc/httpd/conf.d/zabbix.conf
+    *   编辑文件    vim /etc/httpd/conf.d/zabbix.conf
         *   php_value date.timezone Asia/Shanghai
 *   启动ZabBIX服务器和代理进程
     *   systemctl restart zabbix-server zabbix-agent httpd
@@ -29,7 +29,7 @@
     *   从Window服务器找到相应的字休复制到zabbix Server服务器上：
     
          控制面板-->字体-->选择一种中文字库例如“楷体”（simkai.ttf）
-    *   将我们选择的字体文件上传到zabbix web服务，/usr/share/zabbix/fonts目录下（rpm安装目录）
-    *   修改此/usr/share/zabbix/include/defines.inc.php文件中字体的配置，
+    *   将我们选择的字体文件上传到zabbix web服务，cd /usr/share/zabbix/fonts目录下（rpm安装目录）
+    *   修改此vim /usr/share/zabbix/include/defines.inc.php文件中字体的配置，
         将里面关于字体设置从graphfont替换成simkai
         *   define('ZBX_GRAPH_FONT_NAME',           'simkai'); // font file name

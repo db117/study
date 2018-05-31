@@ -93,7 +93,7 @@
     可能需要很多其他的依赖的rpm包，如果依赖包过多，
     我们不大可能通过手动整理的到，所以我们可以通过使用yum安装一次，来获取众多的rpm安装包。
     yum 是有缓存安装包的功能的，只是默认是不缓存安装包的。
-    *   编辑 /etc/yum.conf 文件中, 将文件中的 keepcache=0 改为 keepcache=1,
+    *   编辑  vim /etc/yum.conf 文件中, 将文件中的 keepcache=0 改为 keepcache=1,
      开启缓存功能（ps 收集好了rpm安装包后记得关闭缓存功能哦，否则/var/cache/yum 下会有很多rpm包哦）  
     *   搜索/var/cache/yum目录下所有的rpm包（
     之前没开启缓存功能，所有不会有无关的rpm包），将其拷贝至名为glibc的空文件夹下。
