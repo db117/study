@@ -1,3 +1,4 @@
 /.idea
 /study.iml
 /jvm/target
+*.class

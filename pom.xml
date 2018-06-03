@@ -34,6 +34,7 @@
         <easyPoi.version>3.1.0</easyPoi.version>
         <velocity.version>2.0</velocity.version>
         <fastjson.version>1.2.47</fastjson.version>
+        <lombok.version>1.16.10</lombok.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -103,6 +104,12 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
                 <version>${fastjson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
