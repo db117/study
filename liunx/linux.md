@@ -79,3 +79,8 @@ yum install lrzsz
     *   搜索/var/cache/yum目录下所有的rpm包（
     之前没开启缓存功能，所有不会有无关的rpm包），将其拷贝至名为glibc的空文件夹下。
     将glibc 文件夹移动至一个名为localyumsource的空文件夹下。
+ 
+#### CentOs rpm安装警告
+*   原因：这是由于yum安装了旧版本的GPG keys造成的
+    解决办法：后面加上
+     --force --nodeps
