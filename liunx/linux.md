@@ -1,6 +1,6 @@
 
 ####centos 开启DHCP服务
-*   vim /etc/sysconfig/network-scripts/ifcfg-nes33
+*   vim /etc/sysconfig/network-scripts/ifcfg-ens33
     
     把ONBOOT=no, 修改成ONBOOT=yes
    
