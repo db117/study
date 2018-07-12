@@ -84,3 +84,10 @@ yum install lrzsz
 *   原因：这是由于yum安装了旧版本的GPG keys造成的
     解决办法：后面加上
      --force --nodeps
+     
+     
+####新建用户并授权
+*   创建一个用户名为：es
+    *   adduser es
+*   为这个用户初始化密码，linux会判断密码复杂度，不过可以强行忽略：
+    *   passwd es
