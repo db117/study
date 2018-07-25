@@ -67,7 +67,8 @@
     -v /data/docker/zabbix/alertscripts:/usr/lib/zabbix/alertscripts \
     -v /data/docker/zabbix/externalscripts:/usr/lib/zabbix/externalscripts \
     -p 10051:10051 \
-    -d \
+    -d zabbix/zabbix-server-mysql \
+    
 ```
 *   最后web-nginx
 ```
