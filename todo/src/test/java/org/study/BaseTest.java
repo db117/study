@@ -35,4 +35,14 @@ public class BaseTest {
             jjj = "333";
         }
     }
+
+    @Test
+    public void floatTest() {
+        float x, y, z;
+        x = 1;
+        y = 3;
+        z = 4;
+        System.out.println(y += ++x / z--);
+        System.out.println(x + "," + y + "," + z);
+    }
 }

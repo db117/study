@@ -32,34 +32,50 @@
 *   把镜像拷贝到无网络的电脑，然后通过docker加载镜像即可。
     *   docker load -i centos_image.docker
     
-##docker mysql操作
-*   配置
-    *   -p 3306:3306：
-        *   将容器的 3306 端口映射到主机的 3306 端口。
-    *   -v -v $PWD/conf:/etc/mysql/conf.d：
-        *   将主机当前目录下的 conf/my.cnf 挂载到容器的 /etc/mysql/my.cnf。
-    *   -v $PWD/logs:/logs：
-        *   将主机当前目录下的 logs 目录挂载到容器的 /logs。
-    *   -v $PWD/data:/var/lib/mysql ：
-        *   将主机当前目录下的data目录挂载到容器的 /var/lib/mysql 。
-    *   -e MYSQL_ROOT_PASSWORD=123456：
-        *   初始化 root 用户的密码。
-        
-docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root -d mysql:5.6.35
 
 
-
-####Docker容器开机自动启动
-   --restart具体参数值详细信息：
-       no -  容器退出时，不重启容器；
-
-       on-failure - 只有在非0状态退出时才从新启动容器；
-
-       always - 无论退出状态是如何，都重启容器；
-
-
-
-
-如果创建时未指定 --restart=always ,可通过update 命令设置
-
-docker update --restart=always xxx 
+####docker在线安装
+*   Docker 要求 CentOS 系统的内核版本高于 3.10 ，查看本页面的前提条件来验证你的
+    CentOS 版本是否支持 Docker 。
+    通过 uname -r 命令查看你当前的内核版本
+    *   $ uname -r
+*   使用 root 权限登录 Centos。确保 yum 包更新到最新。
+    *   yum -y update
+*   卸载旧版本(如果安装过旧版本的话)
+    *   yum remove docker docker-common docker-selinux docker-engine
+*   安装需要的软件包， yum-util 提供yum-config-manager功能，另外两个是
+        devicemapper驱动依赖的
+    *   yum install -y yum-utils device-mapper-persistent-data lvm2
+*   设置yum源
+    *   yum-config-manager --add-repo
+         https://download.docker.com/linux/centos/docker-ce.repo
+*   可以查看所有仓库中所有docker版本，并选择特定版本安装
+    *   yum list docker-ce --showduplicates | sort -r
+*   安装docker
+    *   sudo yum install docker-ce #由于repo中默认只开启stable仓库，故这里安装的是最
+        新稳定版18.03.1
+    *   sudo yum install <FQPN> # 例如：sudo yum install docker-ce-18.03.1.ce
+*   启动并加入开机启动
+    ```
+    systemctl start docker
+    systemctl enable docker
+    ```
+*   验证安装是否成功(有client和service两部分表示docker安装启动都成功了)
+    *    docker version
+*   卸载docker
+    *   yum -y remove docker-engine
+*   注意：需要配置镜像加速器
+    我们可以借助阿里云的镜像加速器，登录阿里云
+    (https://cr.console.aliyun.com/#/accelerator)
+    可以看到镜像加速地址如下图：
+cd /etc/docker
+查看有没有 daemon.json。这是docker默认的配置文件。
+如果没有新建，如果有，则修改。
+vim daemon.json
+{
+"registry-mirrors": ["https://m9r2r2uj.mirror.aliyuncs.com"]
+}
+保存退出。
+*   重启docker服务
+    *   service docker restart
+    
