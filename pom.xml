@@ -12,6 +12,7 @@
         <module>jvm</module>
         <module>todo</module>
         <module>spring</module>
+        <module>executor</module>
     </modules>
 
     <parent>
