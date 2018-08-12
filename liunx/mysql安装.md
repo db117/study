@@ -105,3 +105,5 @@
    
     *   进入MySQL命令行模式后，输入如下命令，命令中的 new_password 为root账号的新密码，请修改它。
     *   ALTER USER 'root'@'localhost' IDENTIFIED BY 'new_password';
+
+MySQL 空字段排序 order ** is null , **
