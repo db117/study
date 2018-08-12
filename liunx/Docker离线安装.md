@@ -24,7 +24,7 @@
         
     *   docker -v
     
-#无网络环境下使用docker加载镜像
+##无网络环境下使用docker加载镜像
 *   先从一个有网络的电脑下载docker镜像
     *   docker pull centos
 *   保存镜像到本地文件
@@ -34,7 +34,7 @@
     
 
 
-####docker在线安装
+##docker在线安装
 *   Docker 要求 CentOS 系统的内核版本高于 3.10 ，查看本页面的前提条件来验证你的
     CentOS 版本是否支持 Docker 。
     通过 uname -r 命令查看你当前的内核版本
