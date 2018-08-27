@@ -98,4 +98,6 @@ password:zabbix
 ```
 docker run --name zabbix-agent --link zabbix-server-mysql:zabbix-server -d zabbix/zabbix-agent:latest
 ```
+```docker run --name some-zabbix-agent -p 10050:10050 -e ZBX_HOSTNAME="192.168.1.109" -e ZBX_SERVER_HOST="192.168.1.109" -e ZBX_SERVER_PORT=10051 -d zabbix/zabbix-agent:3.2.5
+```
 最后需要在web端将，zabbix-agent添加到zabbix-server的host列表里面。
