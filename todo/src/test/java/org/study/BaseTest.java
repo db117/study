@@ -45,4 +45,15 @@ public class BaseTest {
         System.out.println(y += ++x / z--);
         System.out.println(x + "," + y + "," + z);
     }
+
+
+    @Test
+    public void warpTest() {
+        int i = 1;
+
+        System.out.println(Integer.toHexString(i));
+        System.out.println(Integer.toHexString(Integer.reverse(i)));
+        System.out.println(Integer.toHexString(Integer.reverseBytes(i)));
+
+    }
 }
