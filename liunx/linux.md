@@ -91,3 +91,8 @@ yum install lrzsz
     *   adduser es
 *   为这个用户初始化密码，linux会判断密码复杂度，不过可以强行忽略：
     *   passwd es
+    
+####开机启动项
+*   使用 systemctl list-unit-files  查看开机启动项 
+
+*   systemctl is-enabled redis.service  是否开机启动

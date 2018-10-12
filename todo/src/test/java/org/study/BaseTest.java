@@ -2,6 +2,11 @@ package org.study;
 
 import org.junit.Test;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.file.Files;
+
 /**
  * 各种测试
  *
@@ -55,5 +60,30 @@ public class BaseTest {
         System.out.println(Integer.toHexString(Integer.reverse(i)));
         System.out.println(Integer.toHexString(Integer.reverseBytes(i)));
 
+    }
+
+    public void fileTest() {
+        try {
+            Files.copy(new File("D:\\java").toPath(), new FileOutputStream(new File("E:\\")));
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void IntToString() {
+        Integer i = 1;
+//        System.out.println((String) i);
+    }
+
+    public int Add(int a, int b) {
+        return b == 0 ? a : Add(a ^ b, (a & b) << 1);
+    }
+
+    @Test
+    public void testAdd() {
+        System.out.println(Add(1, 16));
     }
 }

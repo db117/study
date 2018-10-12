@@ -145,9 +145,8 @@
     *   -e MYSQL_ROOT_PASSWORD=123456：
         *   初始化 root 用户的密码。
         
-docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root -d mysql:5.6.35
 
-
+```docker run -p 3307:3306 --name mymysql -v $PWD/conf:/etc/mysql/conf.d -v $PWD/logs:/logs -v $PWD/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 -d mysql:5.7``` 
 
 ####Docker容器开机自动启动
    --restart具体参数值详细信息：
